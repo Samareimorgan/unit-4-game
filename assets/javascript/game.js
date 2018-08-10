@@ -4,7 +4,7 @@ var losses=0;
 var yourScore=0;
 var matchNumber=0;
 
-    //Instructions:  Each crystal is assigned an unknown fixed value. 
+    //Instructions:  Each crystal is assigned an unknown value. 
                     //At the beginning of each game, a random value will show in the match area.
                     //Using the Crystals; click on the crystals to add value to your total score.
                     // If your score matches the match number, you win
@@ -14,7 +14,14 @@ var matchNumber=0;
                     //Each new game will have a new match number and new values for the crystals
         
   
+    //New game button
+   $("#newgamebtn").on("click",function() {
+     var matchNumber=this.matchRandNum();
+      return
+     var yourScore=0;
 
+   }
+ 
        //FUNCTION - NEW GAME
           // on click of New Game Btn..
          //randomize new match number and place that in the match div
@@ -28,6 +35,10 @@ var matchNumber=0;
         // place text in game message area to state " Game History has been cleared, press New Game to Start"
       
       //Function - matchRandNum
+  function matchRandNum() {
+    Math.floor(Math.random()*120) + 19;
+    $("#match").html();
+  }
        // Random number between 19 - 120 
        // Place it in the Match area
 
