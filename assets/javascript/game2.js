@@ -18,14 +18,20 @@ function startGame() {
     //Randomize the match number
     matchNumber=randNum(19,120);
     //Randomize each crystal value
-    rubyvalue=randNum(1,12);
     agatevalue=randNum(1,12);
+    rubyvalue=randNum(1,12);
     emeraldvalue=randNum(1,12);
     sapphirevalue=randNum(1,12);
-    "assets/images/Agate.png"
-
+    //Place values in appropriate ids
+    $("#first-image").text(agatevalue);
+    $("#second-image").text(rubyvalue);
+    $("#third-image").text(sapphirevalue);
+    $("#fourth-image").text(emeraldvalue);
     $("#match").text(matchNumber);
     $("#yourNum").text(yourNum);
+    $("#gamemsg").text("Select A Crystal");
+};
+
 
 //Instructions:  Each crystal is assigned an unknown value. 
                     //At the beginning of each game, a random value will show in the match area.
@@ -38,6 +44,8 @@ function startGame() {
 
 $("#newgamebtn").on("click",function() {
     startGame();
+});
+/*
 
   function getYourScore() {
     var newScore=crystalvalue+yourNum;
@@ -85,10 +93,10 @@ $("#newgamebtn").on("click",function() {
        // reset losses to 0
        // place text in game message area to state " Game History has been cleared, press New Game to Start"
      
-     //Function - matchRandNum
+   */  //Function - matchRandNum
  function randNum(min, max) {
    return Math.floor(Math.random()*max) + min;
- }
+ };
       // Random number between 19 - 120 
       // Place it in the Match area
 
@@ -98,7 +106,5 @@ $("#newgamebtn").on("click",function() {
 //Other Pseudocode:
 //   on click of a crystal, the number assigned to that crystal then is added to "Your Score" 
 // If "Your Score === match number " Wins++ and .text ("Congratulations You have won") in game messgage area
-//   else if "Your score > match number" losses== and text (Oh no! Your Crystals have suddenly imploded. Try again with a New Game.)
-//   else if "Your score < match number" replace text with (Please select your next crytal) 
-//
-}
+//   else if "Your score > match number" losses== and text (Oh no! Your Crystals have suddenly imploded. Try again with a New Game.
+//   else if "Your score < match number" replace text with (Please select your next crytal) */

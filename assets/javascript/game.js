@@ -4,7 +4,11 @@ var wins=0;
 var losses=0;
 var yourNum;
 var matchNumber=0;
-var crystalvalue;
+var agatevalue;
+var rubyvalue;
+var sapphirevalue;
+var emeraldvalue;
+
 var imageArray=[
   {url:"assets/images/Agate.png",image:".first-image"},
   {url:"assets/images/Ruby.png",image:".second-image"},
@@ -25,14 +29,18 @@ showBtns();
     //New game button
    $("#newgamebtn").on("click",function() {
     startGame();
+    agatevalue=matchRandNum(1,12);
+    rubyvalue=matchRandNum(1,12);
+    sapphirevalue=matchRandNum(1,12);
+    emeraldvalue=matchRandNum(1,12);
 
    });
-
    function startGame() {
     yourNum=0;
     matchNumber=matchRandNum(19,120);
     $("#match").text(matchNumber);
     $("#yourNum").text(yourNum);
+    $("#gamemsg").text("Please Select A Crystal.")
 
     showBtns();
    }
@@ -49,16 +57,40 @@ showBtns();
     };
    };
    
-   //function getImageBtn(imgsrc) {
-    // var imageBtn=$("<img>");
-    // imageBtn.addClass("img-responsive");
-    // imageBtn.attr("src",imgsrc);
-    //  var randomNum=matchRandNum(1,12);
+   function getImageBtn(imgsrc) {
+    var imageBtn=$("<img>");
+      imageBtn.addClass("img-responsive");
+      imageBtn.attr("src",imgsrc);
+    //var randomNum=matchRandNum(1,12);
     //  imageBtn.attr("data-value",randomNum);
-    /*  return imageBtn;
+      return imageBtn;
    }; 
 
-  */  function getYourScore() {
+   function matchRandNum(min, max) {
+    return Math.floor(Math.random()*max) + min;
+  };
+
+  $(".first-image").on("click",function() {
+     yourNum = (agatevalue + yourNum);
+     $("#yourNum").text(yourNum);
+  });
+
+  $(".second-image").on("click",function() {
+    yourNum = (rubyvalue + yourNum);
+    $("#yourNum").text(yourNum);
+ });
+
+ $(".third-image").on("click",function() {
+  yourNum = (sapphirevalue + yourNum);
+  $("#yourNum").text(yourNum);
+});
+
+$(".fourth-image").on("click",function() {
+  yourNum = (emeraldvalue + yourNum);
+  $("#yourNum").text(yourNum);
+});
+
+  /* function getYourScore() {
      var newScore=crystalvalue+yourNum;
       $("#yourNum").text(newScore);
      if(newScore==matchNumber);
@@ -86,7 +118,7 @@ showBtns();
 
     });
     $(".fourth-image").on("click",function(){
-      getYourScore();
+      getYourScore();*/
 
     });
 
@@ -105,9 +137,7 @@ showBtns();
         // place text in game message area to state " Game History has been cleared, press New Game to Start"
       
       //Function - matchRandNum
-  function matchRandNum(min, max) {
-    return Math.floor(Math.random()*max) + min;
-  }
+ 
        // Random number between 19 - 120 
        // Place it in the Match area
 
