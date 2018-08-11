@@ -12,13 +12,17 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
   crossorigin="anonymous">
  
-  <!--Link CSS Stylesheet-->
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
   <!--Link Google Fonts-->
   <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
   
+  <!--Link CSS Stylesheet-->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
   <!--Link Javascript-->
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
   crossorigin="anonymous"></script>
 
@@ -33,21 +37,23 @@
   
   <div class="container-fluid">
     <!--Row1 -->
-    <div class="row">
+    <div class="row images">
       <!--Row 2-Col 1 of 3-->
       <div class="col-3 justify-center-content position-relative">
-        <img class="img-responsive" src="assets/images/Agate.png"/>
+        <div class="first-image"></div>
         <br>
         <br>
-        <img class="img-responsive" src="assets/images/Ruby.png"/>
+        <div class="second-image"></div>
         <br>
         <br>
         <h4>WINS:</h4>
       </div>
       <!--Row 2-Col 2 of 3-->
       <div class="col-6 justify-center-content position-relative clearfix">
-        <img class="img-responsive" id="characterimg" src="assets/images/character.png"/>
-        <button type="button" class="btn btn-lg" id=newgamebtn>New Game</button>
+        <br>
+        <img src="assets/images/character.png"/>
+        <br>
+        <button type="button" class="btn btn-lg" id="newgamebtn">New Game</button>
         <br> 
         <br>
         <h3 class="d-inline-flex p-2 bd-highlight"><span id="gamemsg">Press New Game to Begin</span></h3>
@@ -56,14 +62,14 @@
         <h3 class="d-inline-flex p-2 bd-highlight align-middle">TO MATCH:<span id="match"></span></h3>
         <br>
         <br>
-        <h3 class="d-inline-flex p-2 bd-highlight align-bottom">YOUR NUMBER:</h3>
+        <h3 class="d-inline-flex p-2 bd-highlight align-bottom">YOUR NUMBER:<span id="yourNum"></span></h3>
       </div>
       <!--Row 2-Col 3 of 3-->
       <div class="col-3 justify-center-content position-relative">
-        <img class="img-responsive" src="assets/images/Emerald.png"/>
+          <div class="third-image"></div>
         <br>
         <br>
-        <img class="img-responsive" src="assets/images/Saphire.png"/>
+        <div class="fourth-image"></div>
         <br>
         <br>
         <h4>LOSSES:</h4>
