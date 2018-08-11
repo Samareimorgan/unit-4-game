@@ -11,10 +11,19 @@ var sapphirevalue;
 
 });
 
-// Create Function to clear 
+// Create Function to start game; that randomizes all crystal values and the match numbers as we
 function startGame() {
+    //Zero out yourNum
     yourNum=0;
-    matchNumber=matchRandNum(19,120);
+    //Randomize the match number
+    matchNumber=randNum(19,120);
+    //Randomize each crystal value
+    rubyvalue=randNum(1,12);
+    agatevalue=randNum(1,12);
+    emeraldvalue=randNum(1,12);
+    sapphirevalue=randNum(1,12);
+    "assets/images/Agate.png"
+
     $("#match").text(matchNumber);
     $("#yourNum").text(yourNum);
 
@@ -77,7 +86,7 @@ $("#newgamebtn").on("click",function() {
        // place text in game message area to state " Game History has been cleared, press New Game to Start"
      
      //Function - matchRandNum
- function matchRandNum(min, max) {
+ function randNum(min, max) {
    return Math.floor(Math.random()*max) + min;
  }
       // Random number between 19 - 120 
