@@ -25,7 +25,7 @@ showBtns();
     rubyvalue=matchRandNum(1,12);
     sapphirevalue=matchRandNum(1,12);
     emeraldvalue=matchRandNum(1,12);
-  
+      
   });
     //Start Game Function
    function startGame() {
@@ -68,13 +68,13 @@ showBtns();
     wins++;
     $("#wins").text(wins);
     $("#gamemsg").text("Press New Game to Begin again");
-  }
+  };
   //Lost Function
   function lost () {
     alert("Oh man! Your crystals have shattered, try again.");
     losses++;
     $("#losses").text(losses);
-    $("#gamemsg").text("Press New Game to Begin again")
+    $("#gamemsg").text("Press New Game to Begin again");
   };
 
   //On click events for the images'
@@ -97,14 +97,16 @@ $(".fourth-image").on("click",function() {
   yourNum = (emeraldvalue + yourNum);
   $("#yourNum").text(yourNum);
   });
-  });
+
+});
 
 
-  /* Struggling to figure out where to put the if statements so they work in this code. 
-   
-if(yourNum == matchNumber) {
+//Struggling to figure out where to put the if statements so they work in this code. 
+/*if("yourNum" > "matchNumber") {
+  lost(); 
+}
+if("yourNum" == "matchNumber") {
   won();
-} 
-else if(yourNum > matchNumber) {
-  lost();
-} */
+}
+bugs:  
+1. matchNumber goes over 120*/
